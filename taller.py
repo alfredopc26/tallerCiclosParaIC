@@ -95,3 +95,25 @@ print(f"El porcentaje en la categoria {result['categorias']['2']['desc']} es: ")
 print(f"% {result['categorias']['2']['porc']}")
 print(f"El porcentaje en la categoria {result['categorias']['3']['desc']} es: ")
 print(f"% {result['categorias']['3']['porc']}")
+#
+#
+# Punto 3
+# calcular salario obreros
+
+def calcularSalario(numObreros):
+    
+    for i in range(0, numObreros):
+        dias = int(input(f"Cuantos dias trabajo el obrero #{i+1}: \n"))
+        if dias <= 40:
+            salario = dias * 20
+        else:
+            salarioBase = dias * 20
+            extra = dias - 40
+            if extra > 0:
+                extraBase = extra * 25
+            salario = salarioBase + extraBase
+        print(f"El salario del obrero # {i+1} es:")
+        print(f"{salario}")
+        
+obreros = int(input('Digite la cantidad de obreros a evaluar: \n'))
+calcularSalario(obreros)
