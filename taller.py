@@ -117,3 +117,33 @@ def calcularSalario(numObreros):
         
 obreros = int(input('Digite la cantidad de obreros a evaluar: \n'))
 calcularSalario(obreros)
+#
+#
+# Punto 4
+# Calculo de promedio de hombres y mujeres
+
+def calcularPromedio(numAlumnos):
+    
+    masculino = 0
+    femenino = 0
+    
+    for i in range(0, numAlumnos):
+        print("Mm- Masculino")
+        print("Ff - Femenino")
+        sexo = input(f"Sexo del añumno #{i+1}: \n")
+        if sexo == 'M' or sexo == 'm':
+            masculino += 1
+        elif sexo == 'F' or sexo == 'f':
+            femenino += 1
+        else:
+            return 'Caracter invalido'
+            
+    return {
+        'masculino': (masculino*100)/numAlumnos,
+        'femenino': (femenino*100)/numAlumnos
+        }
+   
+alumnos = int(input('Digite la cantidad de alumnos: \n'))
+porcentaje = calcularPromedio(alumnos)
+print(f"El porcentaje de alumnos masculinos es % {porcentaje['masculino']}")
+print(f"El porcentaje de alumnos femeninos es % {porcentaje['femenino']}")
