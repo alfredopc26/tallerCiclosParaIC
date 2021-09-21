@@ -147,3 +147,36 @@ alumnos = int(input('Digite la cantidad de alumnos: \n'))
 porcentaje = calcularPromedio(alumnos)
 print(f"El porcentaje de alumnos masculinos es % {porcentaje['masculino']}")
 print(f"El porcentaje de alumnos femeninos es % {porcentaje['femenino']}")
+#
+#
+# Punto 5
+# menor valor de un conjunto 
+
+def calcularMenosvalor(arrayNum):
+    menor = 0
+    
+    for i in range(0, len(arrayNum)):
+        if i == 0:
+            menor = arrayNum[i]
+        else:
+            if arrayNum[i] < menor:
+                menor = arrayNum[i]
+    
+    return menor
+
+ciclo = True
+arrayNum = []
+while ciclo:
+    print("Seleccione una opcion: ")
+    print("1. Agregar un numero")
+    print("2. Mostrar numero menor")
+    opcion = int(input('Digite la opcion: \n'))
+    if opcion == 1:
+        num = int(input('Digite el numero: \n'))
+        arrayNum.append(num)
+    else:
+        ciclo = False
+result = calcularMenosvalor(arrayNum)
+print(f"El numero menor es {result}")
+
+
